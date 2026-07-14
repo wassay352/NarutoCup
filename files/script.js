@@ -9,7 +9,7 @@
    Google Apps Script endpoint (exact, provided)
    ------------------------------------------------------------------------- */
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/library/d/19govGEOeQR1dA8TJCUPSjWTskr1J_uhDBc2rQVMAngWuUh7x5fVyracr/2";
+  "https://script.google.com/macros/s/AKfycbxmeQ0d3MGdUTDfUnVL1iy8qIM2XKHuXK9k643nA1WQsE7y0zSZi5APHs.../exec";
 
 /* =========================================================================
    1. COUNTDOWN TIMER
@@ -370,10 +370,15 @@ function collectFormData(form) {
    7. SUBMIT REGISTRATION TO GOOGLE APPS SCRIPT
    ========================================================================= */
 async function submitRegistration(formData) {
+  // IMPORTANT: Google Apps Script web apps do not support CORS preflight
+  // (OPTIONS) requests. Using 'text/plain' keeps this a "simple request"
+  // so the browser sends the POST directly without a preflight check.
+  // Apps Script still reads the raw body as JSON text via e.postData.contents
+  // and JSON.parse() on the backend, so no data is lost.
   const response = await fetch(GOOGLE_SCRIPT_URL, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'text/plain;charset=utf-8',
     },
     body: JSON.stringify(formData),
   });
