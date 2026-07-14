@@ -1,0 +1,22 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="EZ Esports emblem">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff8a3d"/>
+      <stop offset="55%" stop-color="#ff4d2e"/>
+      <stop offset="100%" stop-color="#b8121f"/>
+    </linearGradient>
+    <filter id="logoGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="#0c0805" stroke="url(#logoGrad)" stroke-width="3"/>
+  <circle cx="60" cy="60" r="46" fill="none" stroke="url(#logoGrad)" stroke-width="1.5" opacity="0.5"/>
+  <!-- stylized spiral / chakra swirl, original geometric design -->
+  <path d="M60 60 C60 40, 78 34, 88 46 C96 56, 90 72, 74 74 C62 75.5, 54 66, 58 56 C60.5 49, 68 47, 71 53"
+        fill="none" stroke="url(#logoGrad)" stroke-width="5" stroke-linecap="round" filter="url(#logoGlow)"/>
+  <text x="60" y="102" text-anchor="middle" font-family="Oswald, sans-serif" font-size="13" font-weight="600" fill="#ff8a3d" letter-spacing="2">EZ ESPORTS</text>
+</svg>

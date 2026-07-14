@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naruto Underdogs Cup – Season 1 | Registration</title>
+<meta name="description" content="Register your squad for the Naruto Underdogs Cup Season 1, a free PUBG Mobile tournament by EZ Esports. $300 prize pool, 128 team slots.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ambient animated backdrop -->
+<div class="bg-scene" aria-hidden="true">
+  <div class="bg-glow bg-glow--orange"></div>
+  <div class="bg-glow bg-glow--red"></div>
+  <div class="bg-pattern"></div>
+  <canvas id="particles"></canvas>
+</div>
+
+<a class="skip-link" href="#registration-form">Skip to registration form</a>
+
+<!-- ============ HEADER / HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero__inner">
+
+    <div class="brand fade-up">
+      <img class="brand__logo" src="assets/logo-placeholder.svg" alt="EZ Esports emblem" width="56" height="56">
+      <span class="brand__name">EZ ESPORTS</span>
+    </div>
+
+    <div class="hero__badge fade-up" style="--delay:0.05s">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      Registration Open
+    </div>
+
+    <h1 class="hero__title fade-up" style="--delay:0.1s">
+      <span class="hero__title-main">Naruto Underdogs Cup</span>
+      <span class="hero__title-sub">Season 1</span>
+    </h1>
+
+    <p class="hero__organizer fade-up" style="--delay:0.15s">Hosted by <strong>EZ Esports</strong></p>
+
+    <!-- Stat cards -->
+    <div class="stat-grid fade-up" style="--delay:0.2s">
+      <div class="stat-card float-card" style="--float-delay:0s">
+        <svg class="stat-card__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4H17V9C17 12 15 14 12 14C9 14 7 12 7 9V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 5H4V7C4 9 5.5 10.5 7 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 5H20V7C20 9 18.5 10.5 17 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 14V18" stroke="currentColor" stroke-width="1.6"/><path d="M8 20H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9 18H15L16 20H8L9 18Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="stat-card__label">Prize Pool</span>
+        <span class="stat-card__value">$300 USD</span>
+      </div>
+      <div class="stat-card float-card" style="--float-delay:0.15s">
+        <svg class="stat-card__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 20C3 16.5 5.5 14 9 14C12.5 14 15 16.5 15 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="17" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/><path d="M15.5 14.2C18.3 14.6 20.5 16.8 20.5 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="stat-card__label">Teams</span>
+        <span class="stat-card__value">128 Teams</span>
+      </div>
+      <div class="stat-card float-card" style="--float-delay:0.3s">
+        <svg class="stat-card__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="13" r="1.3" fill="currentColor"/><circle cx="16" cy="12" r="1" fill="currentColor"/><circle cx="17.5" cy="14.5" r="1" fill="currentColor"/><path d="M6.5 13H9.5M8 11.5V14.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <span class="stat-card__label">Game</span>
+        <span class="stat-card__value">PUBG Mobile</span>
+      </div>
+      <div class="stat-card float-card" style="--float-delay:0.45s">
+        <svg class="stat-card__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 12L11 14.5L15.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="stat-card__label">Entry Fee</span>
+        <span class="stat-card__value">FREE</span>
+      </div>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown fade-up" style="--delay:0.25s" aria-label="Countdown to match start">
+      <p class="countdown__label">Matches begin in</p>
+      <div class="countdown__grid" id="countdown" role="timer" aria-live="polite">
+        <div class="countdown__unit">
+          <span class="countdown__value" id="cd-days">00</span>
+          <span class="countdown__unit-label">Days</span>
+        </div>
+        <span class="countdown__sep" aria-hidden="true">:</span>
+        <div class="countdown__unit">
+          <span class="countdown__value" id="cd-hours">00</span>
+          <span class="countdown__unit-label">Hours</span>
+        </div>
+        <span class="countdown__sep" aria-hidden="true">:</span>
+        <div class="countdown__unit">
+          <span class="countdown__value" id="cd-minutes">00</span>
+          <span class="countdown__unit-label">Minutes</span>
+        </div>
+        <span class="countdown__sep" aria-hidden="true">:</span>
+        <div class="countdown__unit">
+          <span class="countdown__value" id="cd-seconds">00</span>
+          <span class="countdown__unit-label">Seconds</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="#registration-form" class="btn btn--primary btn--glow btn--large fade-up" style="--delay:0.3s">
+      <span class="seal-ring" aria-hidden="true"></span>
+      Register Now
+    </a>
+
+  </div>
+
+  <div class="hero__scroll-cue" aria-hidden="true">
+    <span></span>
+  </div>
+</header>
+
+<!-- ============ TOURNAMENT INFORMATION ============ -->
+<section class="info" id="info" aria-labelledby="info-heading">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Tournament Ledger</p>
+    <h2 class="section-title reveal" id="info-heading">Tournament Information</h2>
+
+    <div class="info-grid">
+      <div class="info-card glass reveal">
+        <span class="info-card__label">Registration Opens</span>
+        <span class="info-card__value">16 July 2026</span>
+      </div>
+      <div class="info-card glass reveal">
+        <span class="info-card__label">Matches Start</span>
+        <span class="info-card__value">25 July 2026</span>
+      </div>
+      <div class="info-card glass reveal">
+        <span class="info-card__label">Maximum Teams</span>
+        <span class="info-card__value">128 Teams</span>
+      </div>
+      <div class="info-card glass reveal">
+        <span class="info-card__label">Entry Fee</span>
+        <span class="info-card__value">FREE</span>
+      </div>
+      <div class="info-card glass reveal">
+        <span class="info-card__label">Prize Pool</span>
+        <span class="info-card__value">$300 USD</span>
+      </div>
+      <div class="info-card glass reveal">
+        <span class="info-card__label">Organizer</span>
+        <span class="info-card__value">EZ Esports</span>
+      </div>
+      <div class="info-card glass reveal">
+        <span class="info-card__label">Game</span>
+        <span class="info-card__value">PUBG Mobile</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REGISTRATION FORM ============ -->
+<section class="registration" id="registration-form" aria-labelledby="form-heading">
+  <div class="section-inner section-inner--narrow">
+    <p class="eyebrow reveal">Squad Enlistment Scroll</p>
+    <h2 class="section-title reveal" id="form-heading">Complete Your Registration</h2>
+    <p class="section-subtitle reveal">Fields marked <span class="req">*</span> are required. Have your PUBG UIDs ready before you begin.</p>
+
+    <form class="reg-form glass reveal" id="regForm" novalidate>
+
+      <!-- Captain Information -->
+      <fieldset class="form-fieldset">
+        <legend>Captain Information</legend>
+
+        <div class="field">
+          <label for="teamName">Team Name <span class="req">*</span></label>
+          <input type="text" id="teamName" name="teamName" required autocomplete="off" aria-describedby="err-teamName">
+          <span class="field__error" id="err-teamName" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="captainName">Captain Name <span class="req">*</span></label>
+          <input type="text" id="captainName" name="captainName" required autocomplete="name" aria-describedby="err-captainName">
+          <span class="field__error" id="err-captainName" role="alert"></span>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="captainUID">Captain PUBG UID <span class="req">*</span></label>
+            <input type="text" id="captainUID" name="captainUID" required inputmode="numeric" aria-describedby="err-captainUID">
+            <span class="field__error" id="err-captainUID" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="captainID">Captain PUBG ID <span class="req">*</span></label>
+            <input type="text" id="captainID" name="captainID" required aria-describedby="err-captainID">
+            <span class="field__error" id="err-captainID" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="whatsapp">Captain WhatsApp Number <span class="req">*</span></label>
+            <input type="tel" id="whatsapp" name="whatsapp" required inputmode="tel" placeholder="+92 300 1234567" aria-describedby="err-whatsapp">
+            <span class="field__error" id="err-whatsapp" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="email">Captain Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="captain@example.com" aria-describedby="err-email">
+            <span class="field__error" id="err-email" role="alert"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Player Information -->
+      <fieldset class="form-fieldset">
+        <legend>Player Information</legend>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="player2Name">Player 2 Name <span class="req">*</span></label>
+            <input type="text" id="player2Name" name="player2Name" required aria-describedby="err-player2Name">
+            <span class="field__error" id="err-player2Name" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="player2UID">Player 2 PUBG UID <span class="req">*</span></label>
+            <input type="text" id="player2UID" name="player2UID" required inputmode="numeric" aria-describedby="err-player2UID">
+            <span class="field__error" id="err-player2UID" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="player3Name">Player 3 Name <span class="req">*</span></label>
+            <input type="text" id="player3Name" name="player3Name" required aria-describedby="err-player3Name">
+            <span class="field__error" id="err-player3Name" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="player3UID">Player 3 PUBG UID <span class="req">*</span></label>
+            <input type="text" id="player3UID" name="player3UID" required inputmode="numeric" aria-describedby="err-player3UID">
+            <span class="field__error" id="err-player3UID" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="player4Name">Player 4 Name <span class="req">*</span></label>
+            <input type="text" id="player4Name" name="player4Name" required aria-describedby="err-player4Name">
+            <span class="field__error" id="err-player4Name" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="player4UID">Player 4 PUBG UID <span class="req">*</span></label>
+            <input type="text" id="player4UID" name="player4UID" required inputmode="numeric" aria-describedby="err-player4UID">
+            <span class="field__error" id="err-player4UID" role="alert"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Optional Substitute -->
+      <fieldset class="form-fieldset">
+        <legend>Substitute <span class="legend-optional">(Optional)</span></legend>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="substituteName">Substitute Name</label>
+            <input type="text" id="substituteName" name="substituteName">
+          </div>
+          <div class="field">
+            <label for="substituteUID">Substitute PUBG UID</label>
+            <input type="text" id="substituteUID" name="substituteUID" inputmode="numeric">
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Additional Information -->
+      <fieldset class="form-fieldset">
+        <legend>Additional Information</legend>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="country">Country <span class="req">*</span></label>
+            <input type="text" id="country" name="country" required autocomplete="country-name" aria-describedby="err-country">
+            <span class="field__error" id="err-country" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="city">City <span class="req">*</span></label>
+            <input type="text" id="city" name="city" required autocomplete="address-level2" aria-describedby="err-city">
+            <span class="field__error" id="err-city" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="field field--file">
+          <label for="teamLogo">Team Logo <span class="legend-optional">(Optional)</span></label>
+          <div class="file-drop" id="fileDrop">
+            <input type="file" id="teamLogo" name="teamLogo" accept="image/*">
+            <span class="file-drop__text" id="fileDropText">Choose an image or drag it here</span>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Agreement -->
+      <div class="field field--checkbox">
+        <input type="checkbox" id="agreeRules" name="agreeRules" required aria-describedby="err-agreeRules">
+        <label for="agreeRules">I agree to the Tournament Rules. <span class="req">*</span></label>
+        <span class="field__error" id="err-agreeRules" role="alert"></span>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn--primary btn--glow btn--large btn--submit" id="submitBtn">
+        <span class="seal-ring" aria-hidden="true"></span>
+        <span class="btn__label">Complete Registration</span>
+        <span class="btn__spinner" aria-hidden="true"></span>
+      </button>
+
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ SUCCESS OVERLAY ============ -->
+<div class="success-overlay" id="successOverlay" role="dialog" aria-modal="true" aria-labelledby="success-heading" hidden>
+  <canvas id="confetti"></canvas>
+  <div class="success-card glass">
+    <div class="success-icon" aria-hidden="true">
+      <svg viewBox="0 0 52 52">
+        <circle class="success-icon__circle" cx="26" cy="26" r="24" fill="none"/>
+        <path class="success-icon__check" fill="none" d="M14 27l8 8 16-16"/>
+      </svg>
+    </div>
+    <h2 id="success-heading">Registration Successful</h2>
+    <p>Thank you for registering for <strong>Naruto Underdogs Cup – Season 1</strong>.</p>
+    <p>Your registration has been successfully submitted.</p>
+    <p class="success-note">Our admins will review your registration and contact you through WhatsApp or Email.</p>
+    <button type="button" class="btn btn--primary btn--glow" id="returnBtn">Return to Tournament Page</button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 EZ Esports · Naruto Underdogs Cup Season 1</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
