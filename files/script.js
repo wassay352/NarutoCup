@@ -9,7 +9,7 @@
    Google Apps Script endpoint (exact, provided)
    ------------------------------------------------------------------------- */
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxmeQ0d3MGdUTDfUnVL1iy8qIM2XKHuXK9k643nA1WQsE7y0zSZi5APHsH_w0QnXbi5/exec";
+  "https://script.google.com/macros/library/d/19govGEOeQR1dA8TJCUPSjWTskr1J_uhDBc2rQVMAngWuUh7x5fVyracr/2";
 
 /* =========================================================================
    1. COUNTDOWN TIMER
